@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Header and Logo Block
  * Plugin URI:  http://theaveragedev.com
- * Description: An Headway block that displays the site logo, title and tagline and allows for some user customization.
+ * Description: An Headway block that displays the site logo, title and tagline and allows for some user customisation.
  * Version:     0.1.0
  * Author:      theAverageDev (Luca Tumedei)
  * Author URI:  http://theaveragedev.com
