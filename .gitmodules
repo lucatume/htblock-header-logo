@@ -1,0 +1,3 @@
+[submodule "includes/--name"]
+	path = includes/--name
+	url = git@github.com:lucatume/tad-libs-for-wordpress.git
