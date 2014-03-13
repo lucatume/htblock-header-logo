@@ -1,20 +1,23 @@
 <?php
 namespace headerlogo;
 
-        class Block extends \HeadwayBlockAPI {
+use tad\wrappers\ThemeSupport;
 
-            public $id = 'headerlogo';
-            public $name = 'Header and Logo Block';
-            public $options_class = '\headerlogo\BlockOptions';
-            public $description = 'An Headway block that displays the site logo, title and tagline and allows for some user customization.';
-            protected $themeSupport;
+class Block extends \HeadwayBlockAPI
+{
 
-            public function __construct()
-            {
-                // create an instance of the ThemeSupport class
-                $this->themeSupport = new ThemeSupport();
-                $this->themeSupport->add('custom-header');
-            }
+    public $id = 'headerlogo';
+    public $name = 'Header and Logo Block';
+    public $options_class = '\headerlogo\BlockOptions';
+    public $description = 'An Headway block that displays the site logo, title and tagline and allows for some user customization.';
+    protected $themeSupport;
+
+    public function __construct()
+    {
+        // create an instance of the ThemeSupport class
+        $this->themeSupport = new ThemeSupport();
+        $this->themeSupport->add('custom-header');
+    }
 
             // function enqueue_action($block_id) {
             //     /* CODE FOR OPTIONAL METHOD */
@@ -31,7 +34,7 @@ namespace headerlogo;
             //     return;
             // }
 
-            // function dynamic_css($block_id) {               
+            // function dynamic_css($block_id) {
             //     /* CODE FOR OPTIONAL METHOD */
             //     return;
             // }
@@ -53,4 +56,4 @@ namespace headerlogo;
             // function content($block) {
             //     /* CODE HERE */
             // }
-        }
+}

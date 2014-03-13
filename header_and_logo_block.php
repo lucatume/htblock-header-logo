@@ -30,15 +30,18 @@
  */
 
 // Useful global constants
-define( 'HEADERLOGO_BLOCK_VERSION', '0.1.0' );
-define( 'HEADERLOGO_BLOCK_URL',     plugin_dir_url( __FILE__ ) );
-define( 'HEADERLOGO_BLOCK_PATH',    dirname( __FILE__ ) . '/' );
+define('HEADERLOGO_BLOCK_VERSION', '0.1.0');
+define('HEADERLOGO_BLOCK_URL', plugin_dir_url(__FILE__));
+define('HEADERLOGO_BLOCK_PATH', dirname(__FILE__) . '/');
 // Include the class loader if it's not defined already
 if (!class_exists('jwage\SplClassLoader')) {
     require_once dirname(__FILE__) . '/includes/jwage/SplClassLoader.php';
 }
 // Add the plugin namespace to the autolaoding classes
 $classLoader = new \jwage\SplClassLoader('headerlogo', dirname(__FILE__) . '/includes');
+$classLoader->register();
+// Add theAverageDev libraries namespace to the autoloading classes
+$classLoader = new \jwage\SplClassLoader('tad', dirname(__FILE__) . '/includes');
 $classLoader->register();
 // boostrap the block
 new \headerlogo\Main();
