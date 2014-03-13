@@ -12,14 +12,6 @@ class Block extends \HeadwayBlockAPI
     public $description = 'An Headway block that displays the site logo, title and tagline and allows for some user customization.';
     protected $themeSupport;
 
-    public function enqueue_action($block_id)
-    {
-        // create an instance of the ThemeSupport class
-        $this->themeSupport = new ThemeSupport();
-        $this->themeSupport->add('custom-header');
-        return;
-    }
-
     // public static function init_action($block_id, $block)
     // {
     // }
