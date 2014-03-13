@@ -37,11 +37,11 @@ define('HEADERLOGO_BLOCK_PATH', dirname(__FILE__) . '/');
 if (!class_exists('jwage\SplClassLoader')) {
     require_once dirname(__FILE__) . '/includes/jwage/SplClassLoader.php';
 }
-// Add the plugin namespace to the autolaoding classes
-$classLoader = new \jwage\SplClassLoader('headerlogo', dirname(__FILE__) . '/includes');
-$classLoader->register();
-// Add theAverageDev libraries namespace to the autoloading classes
-$classLoader = new \jwage\SplClassLoader('tad', dirname(__FILE__) . '/includes');
-$classLoader->register();
+// Add all the folders in the includes folder to autoloading
+foreach (glob(dirname(__FILE__) . '/includes/*', GLOB_ONLYDIR) as $folderPath) {
+    $folderName = basename($folderPath);
+    $classLoader = new \jwage\SplClassLoader($folderName, dirname(__FILE__) . '/includes');
+    $classLoader->register();
+}
 // boostrap the block
 new \headerlogo\Main();
