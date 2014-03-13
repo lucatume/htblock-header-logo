@@ -7,6 +7,14 @@ namespace headerlogo;
             public $name = 'Header and Logo Block';
             public $options_class = '\headerlogo\BlockOptions';
             public $description = 'An Headway block that displays the site logo, title and tagline and allows for some user customization.';
+            protected $themeSupport;
+
+            public function __construct()
+            {
+                // create an instance of the ThemeSupport class
+                $this->themeSupport = new ThemeSupport();
+                $this->themeSupport->add('custom-header');
+            }
 
             // function enqueue_action($block_id) {
             //     /* CODE FOR OPTIONAL METHOD */
