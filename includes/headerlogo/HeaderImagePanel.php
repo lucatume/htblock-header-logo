@@ -26,40 +26,72 @@ class HeaderImagePanel extends \HeadwayVisualEditorPanelAPI
                     'be limited',
                     'not be limited'
                     ),
-                'default' => 1
+                'default' => 1,
+                'toggle' => array(
+                    0 => array(
+                        'show' => array(
+                            '#input-width-constraint-mode',
+                            '#input-height-constraint-mode'
+                            )
+                        ),
+                    1 => array(
+                        'hide' => array(
+                            '#input-width-constraint-mode',
+                            '#input-height-constraint-mode',
+                            '#input-width-constraint-value',
+                            '#input-height-constraint-value'
+                            )
+                        )
+                    )
                 ),
-            'width-constraint-mode' => array(
-                'type' => 'select',
-                'name' => 'width-constraint-mode',
-                'label' => 'Header image width constraint should be',
-                'options' => array(
-                    'a fixed value',
-                    'flexible'
+        'width-constraint-mode' => array(
+            'type' => 'select',
+            'name' => 'width-constraint-mode',
+            'label' => 'Header image width constraint should be',
+            'options' => array(
+                'a fixed value',
+                'flexible'
+                ),
+            'default' => 1,
+            'toggle' => array(
+                0 => array(
+                    'show' => array('#input-width-constraint-value')
                     ),
-                'default' => 1
+                1 => array(
+                    'hide' => array('#input-width-constraint-value')
+                    )
+                )
+            ),
+        'height-constraint-mode' => array(
+            'type' => 'select',
+            'name' => 'height-constraint-mode',
+            'label' => 'Header image height constraint should be',
+            'options' => array(
+                'a fixed value',
+                'flexible'
                 ),
-            'height-constraint-mode' => array(
-                'type' => 'select',
-                'name' => 'height-constraint-mode',
-                'label' => 'Header image height constraint should be',
-                'options' => array(
-                    'a fixed value',
-                    'flexible'
+            'default' => 1,
+            'toggle' => array(
+                0 => array(
+                    'show' => array('#input-height-constraint-value')
                     ),
-                'default' => 1
-                ),
-            'width-constraint-value' => array(
-                'type' => 'text',
-                'name' => 'width-constraint-value',
-                'label' => 'Fixed width',
-                'default' => '300px'
-                ),
-            'height-constraint-value' => array(
-                'type' => 'text',
-                'name' => 'height-constraint-value',
-                'label' => 'Fixed height',
-                'default' => '300px'
-                ),
-            )
+                1 => array(
+                    'hide' => array('#input-height-constraint-value')
+                    )
+                )
+            ),
+        'width-constraint-value' => array(
+            'type' => 'text',
+            'name' => 'width-constraint-value',
+            'label' => 'Fixed width',
+            'default' => '300px'
+            ),
+        'height-constraint-value' => array(
+            'type' => 'text',
+            'name' => 'height-constraint-value',
+            'label' => 'Fixed height',
+            'default' => '300px'
+            ),
+        )
     );
 }
