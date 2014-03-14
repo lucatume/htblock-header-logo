@@ -71,9 +71,9 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                         )
                     )
                 ),
-    'default-header-image' => array(
+    'default-image-src' => array(
         'type' => 'image',
-        'name' => 'default-header-image',
+        'name' => 'default-image-src',
         'label' => 'Default header image',
         'default' => null
         )
