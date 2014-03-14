@@ -9,25 +9,14 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
         );
 
     public $tabs = array(
-            // 'my-only-tab' => 'Settings'
         'user-choices' => 'User choices'
         );
 
     public $inputs = array(
-
-            // 'my-only-tab' => array(
-
-            //     'text-input' => array(
-            //         'type' => 'image',
-            //         'name' => 'logo',
-            //         'label' => 'Logo',
-            //         'tooltip' => 'Put anything relevant about the input in this tooltip.'
-            //     )
-            // )
         'user-choices' => array(
-            'user-image' => array(
+            'user-image-position' => array(
                 'type' => 'select',
-                'name' => 'user-image',
+                'name' => 'user-image-position',
                 'label' => 'Theme user did upload and selected an image',
                 'tooltip' => 'Theme user did upload an image and has choosen to use it in the header. How should the image be used?',
                 'options' => array(
@@ -36,47 +25,41 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                     'on the right',
                     'in the center'
                     ),
-                'default' => 'as the block background'
+                'default' => 0
                 ),
-            'no-user-image' => array(
+            'use-default-image' => array(
                 'type' => 'select',
-                'name' => 'no-user-image',
-                'label' => 'Theme user does not want to use an image',
-                'tooltip' => 'Theme user did not upload an image or has choosen not to use it in the header. What to do then?',
-                'options' => array(
-                    'show no image',
-                    'use a default image as the block background',
-                    'use a default image on the left',
-                    'use a default image on the right',
-                    'use a default image in the center'
-                    ),
-                'default' => 'show no image',
+                'name' => 'use-default-image',
+                'label' => 'Theme user does not want to use an image, block should',
+                'options' => array('not show an image', 'show a default image'),
+                'default' => '0',
                 'toggle' => array(
                     0 => array(
-                        'hide' => array(
-                            '#input-default-header-image'
-                            )
+                        'hide' => array('#input-default-image-src','#input-default-image-position')
                         ),
                     1 => array(
-                        'show' => array('#input-default-header-image')
-                        ),
-                    2 => array(
-                        'show' => array('#input-default-header-image')
-                        ),
-                    3 => array(
-                        'show' => array('#input-default-header-image')
-                        ),
-                    4 => array(
-                        'show' => array('#input-default-header-image')
+                        'show' => array('#input-default-image-src','#input-default-image-position')
                         )
                     )
                 ),
-    'default-image-src' => array(
-        'type' => 'image',
-        'name' => 'default-image-src',
-        'label' => 'Default header image',
-        'default' => null
-        )
-    )
+            'default-image-src' => array(
+                'type' => 'image',
+                'name' => 'default-image-src',
+                'label' => 'Pick a default header image',
+                'default' => null
+                ),
+            'default-image-position' => array(
+                'type' => 'select',
+                'name' => 'default-image-position',
+                'label' => 'How to use the default image?',
+                'options' => array(
+                    'use the default image as the block background',
+                    'show the default image on the left',
+                    'show the default image on the right',
+                    'show the default image in the center'
+                    ),
+                'default' => 0
+                )
+            )
     );
 }
