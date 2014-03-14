@@ -41,7 +41,7 @@ class Block extends \HeadwayBlockAPI
             // does theme developer wishes to use a default image?
             // options for select controls are saved by their index
             // show no image is the 0 index option
-            $useDefaultImage = \HeadwayBlocksData::get_block_setting($block, 'no-user-image');
+            $useDefaultImage = \HeadwayBlocksData::get_block_setting($block, 'use-default-image');
             if (!$useDefaultImage) {
                 // nothing will be printed to the page but before and
                 // after filter will be fired the same
